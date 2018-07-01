@@ -1,0 +1,49 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int x,y,z,steps=1,flag=0;
+    scanf("%d%d%d",&x,&y,&z);
+    if(z>x && z>y)
+    {
+       printf("-1");
+       flag=1;
+    }
+    else
+    {
+        if(x==z || y==z)
+        steps=1;
+        else 
+        {
+            int l=x>y?x:y;
+            int s=x<y?x:y;
+            while(l>z)
+            {
+                l=l-s;
+                steps+=2;
+                if(l==z)
+                {
+                    printf("%d",steps-1);
+                    flag=1;
+                }
+            }
+        }
+    }
+    if(flag==0)
+    printf("-1");
+}
+
+Input: 
+5
+2
+3
+
+Output:
+2 
+
+Explanation: 
+Here X=5, Y=2 
+Step 1: Pour 5 liters of liquid into 5 liter can
+Step 2: Pour 2 liters from 5 liter can into 2 liter can. 
+Now the 5 liter can will have 3 liters which is Z. Hence 2 steps are required

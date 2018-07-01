@@ -1,0 +1,13 @@
+#include<stdio.h>
+#include <stdlib.h>
+int main()
+{
+    int r=0;
+    char c[10];
+    while(scanf("%[^0-9]%d",c,&r)>0)
+    {
+        int ctr=1;
+        while(ctr++ <= r)
+        printf("%s",c);
+    }
+}

@@ -1,0 +1,40 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    char first[4];
+    char days[7][4]={"MON","TUE","WED","THU","FRI","SAT","SUN"};
+    int date,i,j,index;
+    scanf("%s\n%d",first,&date);
+    while(date>7)
+    {
+        date=date-7;
+    }
+    for(i=0;i<7;i++)
+    {
+        if(strcmp(first,days[i])==0)
+        {
+            index=i;
+            break;
+        }
+    }
+    j=date+index-1;
+    while(j>=7)
+    {
+        j=j-7;
+    }
+    printf("%s",days[j]);
+}
+
+Input:
+MON 
+10
+
+Output:
+WED
+
+Explanation:
+If it is Monday on 1st of the month, 
+then 10th of the month will be a Wednesday.
+Hence WED is printed.

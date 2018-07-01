@@ -1,0 +1,55 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{char a[1000],b[1000];
+ int l1,l2,m;
+ scanf("%s%s",a,b);
+ l1=strlen(a);
+ l2=strlen(b);
+ m = l1>l2 ? l1 : l2;
+ short int sum[m];
+ int addIndex=0;
+ char temp[2];
+ temp[1]='\0';
+ int n1,n2,carry=0;
+ while(addIndex<m)
+ {
+    
+   if(addIndex<l1 && addIndex<l2)
+   {
+     temp[0]=a[l1-addIndex-1];
+     n1=atoi(temp);
+     temp[0]=b[l2-addIndex-1];
+     n2=atoi(temp);
+   }
+   else if(addIndex<l1)
+   {
+     temp[0]=a[l1-addIndex-1];
+     n1=atoi(temp);
+     n2=0;
+   }
+   else if(addIndex<l2)
+   {
+     temp[0]=b[l2-addIndex-1];
+     n2=atoi(temp);
+     n1=0;
+   }
+   
+   sum[addIndex]=(n1+n2+carry)%10;
+   carry=(n1+n2+carry)/10;
+   addIndex++;
+ }
+ if(carry>0)
+ {
+     sum[addIndex]=carry;
+     addIndex++;
+     
+ }
+ int printIndex=addIndex-1;
+ while(printIndex>=0)
+ {
+     printf("%d",sum[printIndex]);
+     printIndex--;
+ }
+}

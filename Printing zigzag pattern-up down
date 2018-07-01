@@ -1,0 +1,37 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int printPattern(int n)
+{
+    int row=1;
+    while(row<=n)
+    {
+        int col=1;
+        int val=n-row+1;
+        char direction='U';
+        while(col<=row)
+        {
+             printf("%d ",val);
+             if(direction=='D')
+             {
+                 val=val+(n-row)*2+1;
+                 direction='U';
+             }
+             else
+             {
+                 int rowsAbove=row-1;
+                 int colsLeft=col-1;
+                 val=val+(rowsAbove-colsLeft)+(rowsAbove-(colsLeft+1))+1;
+                 direction='D';
+             }
+             col++;
+        }
+        row++;
+    }
+}
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    printPattern(n);
+}

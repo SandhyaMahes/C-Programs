@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int n,x,y,temp1=0,temp2=0,p=1;
+    scanf("%d",&n);
+    scanf("%d %d",&x,&y);
+    temp1=x%10;
+    x/=10;
+    while(x!=0)
+    {
+       temp1+=(x%10)*(pow(n,p));
+       x=x/10;
+       p++;
+    }
+    temp2=y%10;
+    y/=10;
+    p=1;
+    while(y!=0)
+    {
+        temp2+=(y%10)*(pow(n,p));
+        y=y/10;
+        p++;
+    }
+    printf("%d",temp1+temp2);
+}

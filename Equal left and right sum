@@ -1,0 +1,37 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    int a[n],i,j,k,sum1,sum2;
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        sum1=0;
+        sum2=0;
+        j=0;
+        k=i+1;
+        while(j<i || k<n)
+        {
+            if(j<i)
+            {
+                sum1+=a[j];
+            }
+            if(k<n)
+            {
+                sum2+=a[k];
+            }
+            j++;
+            k++;
+        }
+        if(sum1==sum2 && sum1!=0 && sum2!=0)
+        {
+            printf("%d ",a[i]);
+        }
+    }
+}

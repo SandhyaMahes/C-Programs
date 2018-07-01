@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int a[101],l=0,i,p=1;
+    char c=' ';
+    while(c==' ')
+    {
+        scanf("%d%c",&a[l],&c);
+        l++;
+    }
+    for(i=0;i<l;i++)
+    {
+        p*=a[i];
+    }
+    for(i=0;i<l;i++)
+    {
+        a[i]=p/a[i];
+    }
+    for(i=0;i<l;i++)
+    {
+        printf("%d ",a[i]);
+    }
+}
+
+Input:
+1 2 3 4 5
+
+Output:
+120 60 40 30 24

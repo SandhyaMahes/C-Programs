@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include <stdlib.h>
+int main()
+{int a,o[50],x,y,t=0,count=0,i=0;
+char c=' ';
+while(c==' ')
+{scanf("%d%c",&o[i],&c);
+i++;
+count++;
+}
+
+  scanf("%d",&x);
+  scanf("%d",&y);
+ 
+for(i=0;i<count;i++)
+{
+ if(o[i]%2==0)
+ {t-=y; }
+else
+ {t+=x; }
+}
+printf("%d",t);
+return 0;
+}

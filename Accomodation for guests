@@ -1,0 +1,52 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+void findCombinations(int a[],int n,int index,int combo[],int comboSize,int filled,int guests)
+{   int ways;
+    combo[filled++]=a[index];
+    if(filled==comboSize){
+        ways=checkCapacity(combo,comboSize,guests);
+    }
+    else
+    {
+        while((++index)<n)
+        {findCombinations(a,n,index,combo,comboSize,filled,guests);}
+    }
+    printf("%d",ways);
+}
+int checkCapacity(int combo[],int comboSize,int guests)
+{
+    int i,capacity=0,ways=0;
+    for(i=0;i<comboSize;i++){
+        capacity=combo[i];
+        if(capacity==guests)
+        ways++;
+    }
+    return ways;
+}
+
+int main()
+{
+    int n,guests;
+    scanf("%d",&n);
+    int a[n],i;
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    scanf("%d",&guests);
+    int comboSize=1;
+    
+    while(comboSize<=n)
+    {
+        int combo[comboSize],filled=0;
+        for(i=0;i<n-comboSize;i++){
+        findCombinations(a,n,i,combo,comboSize,filled,guests);
+        }
+        comboSize++;
+    
+    }  
+    
+
+
+}

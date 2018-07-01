@@ -1,0 +1,46 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    char s1[50],s2[50];
+    int l,col,row,i1=0,i2;
+    scanf("%s %s",s1,s2);
+    l=strlen(s1);
+    row=l;
+    col=l*2-1;
+    i2=l-1;
+    char print;
+    if(s1[l-1]!=s2[0])
+    {
+        char temp[50];
+        strcpy(temp,s1);
+        strcpy(s1,s2);
+        strcpy(s2,temp);
+            
+    }
+    int r,c;
+    for(r=0;r<row;r++)
+    {
+        for(c=0;c<col;c++)
+        {
+            if(c==i1)
+            {
+                print=s1[i1];
+            }
+            else if(c==l+i2-1)
+            {
+                print=s2[i2];
+            }
+            else
+            {
+                print='*';
+            }
+            printf("%c",print);
+        }
+        i1++;
+        i2--;
+        printf("\n");
+    }
+          
+}

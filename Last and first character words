@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    char s[50][100],c=' ',flag=0;
+    int count=0,i=0,n;
+    while(c==' ')
+    {
+        scanf("%s%c",s[count],&c);
+        count++;
+    }
+    for(i=0;i<count-1;i++)
+    {
+        n=strlen(s[i]);
+        if(s[i][n-1]==s[i+1][0])
+        {
+            printf("%s ",s[i+1]);
+            flag=1;
+        }
+    }
+    if(flag==0)
+    printf("-1");
+}
+
+INPUT:
+word dove think yellow wood
+
+OUTPUT:
+dove wood
+
+INPUT:
+mint bob jack
+
+OUTPUT:
+-1

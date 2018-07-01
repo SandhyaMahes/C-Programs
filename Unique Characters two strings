@@ -1,0 +1,71 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    char s1[1001],s2[1001],s3[1001],s4[1001];
+    int l1,l2,i,j,k,u=0,count1=0,count2=0,flag1=0;
+    scanf("%s%s",s1,s2);
+    l1=strlen(s1);
+    l2=strlen(s2);
+    for(i=0;i<l1;i++)
+    {
+        for(j=0;j<i;j++)
+        {
+            if(s1[i]==s1[j])
+            {
+                break;
+            }
+        }
+        if(i==j)
+        {
+            u++;
+            s3[count1]=s1[i];
+            count1++;
+        }
+    }
+    for(i=0;i<l2;i++)
+    {
+        for(k=0;k<i;k++)
+        {
+            if(s2[i]==s2[k])
+            {
+                break;
+            }
+        }
+        if(i==k)
+        {
+            s4[count2]=s2[i];
+            count2++;
+        }
+    }
+    flag1=0;
+    for(i=0;i<count2;i++)
+    {
+        for(j=0;j<count1;j++)
+        {
+            if(s4[i]==s3[j])
+            {
+                flag1=0;
+                break;
+            }
+            else
+            flag1=1;
+        }
+        if(flag1==1)
+        u++;
+    }
+    printf("%d",u);
+}
+
+INPUT:
+owl pow
+
+OUTPUT:
+4
+
+INPUT:
+abcaad aaaab
+
+OUTPUT:
+4

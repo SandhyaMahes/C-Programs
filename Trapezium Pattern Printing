@@ -1,0 +1,45 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    int i,j,k=0,hyphenCount,a,b,count=n*(n+1);
+    int l=count-n+1,temp=n,m;
+    for(i=0;i<n;i++)
+    {
+        a=1;
+        b=1;
+        for(hyphenCount=0;hyphenCount<i;hyphenCount++)
+        {
+            printf("--");
+        }
+        for(j=k+1;a<=temp;j++)
+        {
+            printf("%d*",j);
+            k=j;
+            a++;
+        }
+        for(m=l;b<=temp;m++)
+        {
+            if(b==temp)
+            printf("%d",m);
+            else
+            printf("%d*",m);
+            b++;
+        }
+        printf("\n");
+        temp--;
+        l=l-temp;
+    }
+}
+
+INPUT:
+4
+
+OUTPUT:
+1*2*3*4*17*18*19*20
+--5*6*7*14*15*16
+----8*9*12*13
+------10*11

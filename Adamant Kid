@@ -1,0 +1,54 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    char s[101],c;
+    int x,y,l,i,j,rep=0;
+    scanf("%s%n",s,&l);
+    scanf("%d%d",&x,&y);
+    //find character in x position
+    for(i=0;i<l;i++)
+    {
+        if(i+1==x)
+        c=s[i];
+    }
+    if(y>l)
+    rep=1;
+    for(i=0;i<l;i++)
+    {
+        //if y position lies within the string
+        if(rep==0)
+        {
+            if(s[y-1]==c)
+            printf("YES");
+            else
+            printf("NO");
+            break;
+        }
+        //if the string has to be repeated
+        else
+        {
+            while(y>l)
+            {
+                y=y-l;
+            }
+            if(s[y-1]==c)
+            printf("YES");
+            else
+            printf("NO");
+            break;
+        }
+    }
+}
+
+Input:
+icecream
+4 10
+
+Output:
+YES
+
+Explanation:
+As the kid keeps on repeating icecream, the 10th position character will also be c in icecreamicecream.
+As the characters in 4th and 10th position are same (that is c) the output is YES

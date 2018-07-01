@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include <stdlib.h>
+int main()
+{
+int l=1000,i=0;
+float m;
+char s[50],c=' ',name[50];
+while(c!='\n')
+{scanf("%[^@]@%f%c",s,&m,&c);
+if(m<=l)
+{l=m;
+strcpy(name,s); 
+}
+}
+printf("%s",name);
+
+
+}

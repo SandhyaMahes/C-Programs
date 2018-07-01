@@ -1,0 +1,41 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    char c;
+    int n,i,a;
+    scanf("%c %d",&c,&n);
+    a=c;
+    for(i=0;i<n;i++)
+    {
+        if(a>=97 && a<=122)
+        {
+            printf("%c",c);
+            c=a+1;//c=a++; does not work
+            a++;
+        }
+        if(a>=65 && a<=90)
+        {
+            printf("%c",c);
+            c=a+1;
+            a++;
+        }
+        if(a==123)
+        {
+            a=97;
+            c=a;
+        }
+        if(a==91)
+        {
+            a=65;
+            c=a;
+        }
+    }
+}
+
+Input:
+a 4
+
+Output:
+abcd

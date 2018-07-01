@@ -1,0 +1,34 @@
+Instead of K the keyboard may sometimes display T (but will never display K instead of T)
+Similarly instead of G, the keyboard may sometimes display D,
+instead of R sometimes it may display L and
+sometimes instead of R it displays F.
+
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    char s[101];
+    int l,i,count=0;
+    scanf("%s%n",s,&l);
+    for(i=0;i<l;i++)
+    {
+        if(s[i]=='T' || s[i]=='D' || s[i]=='L' || s[i]=='F')
+        count++;
+    }
+    printf("%.0lf",pow(2,count));
+}
+
+Input:
+FILIPEK 
+
+Output: 
+4
+
+Explanation:
+The words that may be wrongly typed are F and L.
+Here F could be correctly typed or wrongly typed instead of R.
+Similarly L could be correctly typed or wrongly typed instead of R.
+Hence the overall words to be considered are 2*2 = 4.
+Note: K is not considered as K will not be typed instead of some other letter.
+Only instead of K sometimes T will be typed.

@@ -1,0 +1,91 @@
+N string values are passed as input. The program must sort and
+print the strings based on the count of unique alphabets in them.
+If two strings have same unique alphabet count, then sort them based on
+lexicographical order. Sorting based on the count of unique characters
+must be done in descending order (that is the string having the highest
+unique character count must be printed first).
+
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int n,i,j,k,m=0;
+    scanf("%d",&n);
+    int uniqueCount[n],temp=0,flag=0;
+    char s[n][1001],st[1001],rep[1001];
+    for(i=0;i<n;i++)
+    scanf("%s",&s[i]);
+    for(i=0;i<n;i++)
+    {
+        uniqueCount[i]=0;
+        strcpy(rep,s[i]);
+        m=0;
+        //Assigning repeating characters to '*'
+        for(j=0;j<strlen(rep);j++)
+        {
+            for(k=j+1;k<strlen(rep);k++)
+            {
+                if(rep[j]==rep[k] && rep[j]!='*')
+                {
+                    rep[k]='*';
+                }
+            }
+        }
+        //uniqueCount of characters
+        for(j=0;j<strlen(rep);j++)
+        {
+            if(rep[j]!='*')
+            {
+                uniqueCount[i]++;
+            }
+        }
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=i+1;j<n;j++)
+        {
+            //Sort strings based on descending order of unique characters count
+            if(uniqueCount[i]<uniqueCount[j])
+            {
+                temp=uniqueCount[i];
+                uniqueCount[i]=uniqueCount[j];
+                uniqueCount[j]=temp;
+                strcpy(st,s[i]);
+                strcpy(s[i],s[j]);
+                strcpy(s[j],st);
+            }
+            //for strings with same number of unique characters sort lexicographically
+            if(uniqueCount[i]==uniqueCount[j])
+            {
+                for(m=0;m<strlen(s[i]);m++)
+                {
+                    if(s[i][m]>s[j][m])
+                    {
+                        strcpy(st,s[i]);
+                        strcpy(s[i],s[j]);
+                        strcpy(s[j],st);
+                        break;
+                    }
+                    if(s[i][m]<s[j][m])
+                    break;
+                }
+            }
+        }
+    }
+    for(i=0;i<n;i++)
+    printf("%s\n",s[i]);
+}
+
+Input:
+4
+sit
+miner
+flood
+temple 
+
+Output:
+miner
+temple 
+flood
+sit

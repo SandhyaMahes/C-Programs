@@ -1,0 +1,82 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int r,s,l,g,i,j,first,last,flag=0;
+    char c;
+    scanf("%d %d %d %d\n",&r,&s,&l,&g);
+    first=s;
+    last=l;
+    char b='L';
+    scanf("%c",&c);
+    if(c=='L')
+    {
+        first=l;
+        last=s;
+        b='S';
+    }
+    for(i=0;i<r;)
+    {
+        for(j=0;j<first;j++)
+        {
+            if(i<r)
+            {
+                i++;
+                flag=0;
+            }
+            else
+            break;
+        }
+        for(j=0;j<g;j++)
+        {
+            if(i<r)
+            {
+                i++;
+                flag=1;
+            }
+            else
+            break;
+        }
+        for(j=0;j<last;j++)
+        {
+            if(i<r)
+            {
+                i++;
+                flag=2;
+            }
+            else
+            break;
+        }
+        for(j=0;j<g;j++)
+        {
+            if(i<r)
+            {
+                i++;
+                flag=1;
+            }
+        }
+    }
+    if(flag==0)
+    printf("%c",c);
+    else if(flag==1)
+    printf("G");
+    else if(flag==2)
+    printf("%c",b);
+}
+
+Input:
+20 2 4 3
+S 
+
+Output: 
+L
+
+Explanation: 
+#################### 
+--***----***--***--- 
+####################
+
+'#' represents the Border of road.
+'-' represents the lines.
+'*' represents the gap.

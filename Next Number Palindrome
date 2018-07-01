@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int n,i,flag=0;
+    scanf("%d",&n);
+    for(i=n;;i++)
+    {
+        flag=checkPalindrome(i);
+        if(flag==1)
+        break;
+    }
+    printf("%d",i);
+}
+int checkPalindrome(int n)
+{
+    int temp=n,d=0,rev=0;
+    while(temp!=0)
+    {
+        d=temp%10;
+        rev=rev*10+d;
+        temp/=10;
+    }
+    if(n==rev)
+    return 1;
+}
+
+Input: 
+909
+
+Output: 
+919

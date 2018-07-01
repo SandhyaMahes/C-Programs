@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{int h,m,count=0;
+char c=' ',s[10000];
+while(c!='\n')
+{scanf("%d:%d%c",&h,&m,&c);
+if(h==10 && m>0)
+count++;
+if(h>10 && m>=00)
+{count++;}
+
+}
+
+printf("%d",count);
+
+}

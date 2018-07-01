@@ -1,0 +1,42 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    char s[10][101],c=' ';
+    int i,j,l=0,x,y;
+    while(c==' ')
+    {
+        scanf("%s%c",&s[l],&c);
+        l++;
+    }
+    scanf("%d %d",&x,&y);
+    for(i=0;i<l;i++)
+    {
+        for(j=0;s[i][j]!='\0';j++)
+        {
+            if(s[i][j]>=97 && s[i][j]<=122)
+            {
+                if(s[i][j]+x>122)
+                s[i][j]=96;
+                printf("%c",s[i][j]+x);
+            }
+            else
+            {
+                printf("%d",s[i][j]-'0'+y);
+            }
+        }
+        printf(" ");
+    }
+}
+
+Input:
+call me at 10 p.m 
+2 
+1 
+
+Output: 
+ecnn og cv 21 r.o
+
+Every alphabet is shifted by X positions in forward direction and 
+Y is added to every number in the message.

@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int n,i,j;
+    scanf("%d",&n);
+    for(i=n-1;i>=0;i--)
+    {
+        for(j=n;j>i;j--)
+        {
+            printf("%d ",j);
+        }
+        printf("\n");
+    }
+}
+
+INPUT:
+5
+
+OUTPUT:
+5
+5 4
+5 4 3
+5 4 3 2
+5 4 3 2 1

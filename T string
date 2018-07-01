@@ -1,0 +1,46 @@
+#include<stdio.h>
+#include <stdlib.h>
+int main()
+{
+    char s1[101],s2[101];
+    int l1,l2,row,col,cPosition,i;
+    scanf("%s",s1);
+    l1=strlen(s1);
+    scanf("%s",s2);
+    l2=strlen(s2);
+    printf("%s\n",s1);
+    for(i=l1-1;i>=0;i--)
+    {
+        if(s2[0]==s1[i])
+        {
+            cPosition=i;
+            break;
+        }
+    }
+    for(row=1;row<=l2-1;row++)
+    {
+        for(col=0;col<=l1-1;col++)
+        {
+            if(col!=cPosition)
+            {
+                printf("-");
+            }
+            else
+            {
+                printf("%c",s2[row]);
+            }
+        }
+        printf("\n");
+    }
+}
+
+INPUT:
+morning
+ninja
+
+OUTPUT:
+morning
+-----i-
+-----n-
+-----j-
+-----a-

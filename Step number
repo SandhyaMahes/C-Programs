@@ -1,0 +1,37 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    int d[n],i=0,j=0,flag=0;
+    while(n!=0)
+    {
+        d[i]=n%10;
+        n=n/10;
+        i++;
+    }
+    for(j=0;j<i-1;j++)
+    {
+        if(abs(d[j]-d[j+1])!=1)
+        {
+            flag=1;
+            break;
+        }
+    }
+    if(flag==0)
+    printf("YES");
+    else
+    printf("NO");
+}
+
+INPUT:
+123432
+OUTPUT:
+YES
+
+INPUT:
+123543
+OUTPUT:
+NO

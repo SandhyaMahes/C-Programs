@@ -1,0 +1,58 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int a[20],b[20],aTotal=0,bTotal=0,i=0,end=0;
+    float aAvg=0.0,bAvg=0.0;
+    char c=' ';
+    while(c==' ')
+    {
+        scanf("%d%c",&a[i],&c);
+        if(a[i]<0)
+        {
+            printf("INVALIDINPUT");
+            end=1;
+            break;
+        }
+        aTotal+=a[i];
+        i++;
+    }
+    if(end==0)
+    {
+        c=' ';
+        aAvg=aTotal/i;
+        i=0;
+        while(c==' ')
+        {
+            scanf("%d%c",&b[i],&c);
+            if(b[i]<0)
+            {
+                printf("INVALIDINPUT");
+                end=1;
+                break;
+            }
+            bTotal+=b[i];
+            i++;
+        }
+        bAvg=bTotal/i;
+        int total=aTotal>bTotal?aTotal:bTotal;
+        if(aAvg==bAvg)
+        printf("%d",total);
+        else if(aAvg>bAvg)
+        printf("%d",aTotal);
+        else
+        printf("%d",bTotal);
+    }
+}
+
+Input: 
+20 30 40 
+50 10
+
+Output: 
+90
+
+Explanation: 
+Both the players have same average 30.
+Hence the output is the highest total runs which is by player 1. (20+30+40 = 90)

@@ -1,0 +1,16 @@
+#include<stdio.h>
+#include <stdlib.h>
+int main()
+{
+    char s[100];
+    int n;
+    scanf("%s",s);
+    scanf("%d",&n);
+     printf("%.6s\n",s);
+     //Or assigning value of s[n]='\0'
+    s[n]='\0';
+    printf("%s\n",s);
+   
+
+    
+}

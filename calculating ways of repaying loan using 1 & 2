@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+unsigned long long int repay(int loan)
+{
+    if(loan==1)
+    return 1;
+    unsigned long long int distinct[loan+1];
+    distinct[1]=1;
+    distinct[2]=2;
+    int amount=3;
+    for(;amount<=loan;amount++)
+    {
+        distinct[amount]=distinct[amount-2]+distinct[amount-1];
+    }
+    return distinct[loan];
+}
+int main()
+{
+    int loan;
+    scanf("%d",&loan);
+    printf("%llu",repay(loan));
+    
+    
+
+}

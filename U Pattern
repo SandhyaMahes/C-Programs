@@ -1,0 +1,52 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    char s1[101],s2[101],s3[101],c1[101],c2[101],c3[101];
+    int l1,l2,l3,i,j,k;
+    scanf("%s%s%s",s1,s2,s3);
+    l1=strlen(s1);
+    l2=strlen(s2);
+    l3=strlen(s3);
+    strcpy(c1,s1);
+    strcpy(c2,s2);
+    strcpy(c3,s3);
+    int l=l1,dl=l3;
+    if(l1==l3)
+    {
+        strcpy(c1,s1);
+        strcpy(c2,s3);
+        strcpy(c3,s2);
+        l=l1;
+        dl=l2;
+    }
+    else if(l2==l3)
+    {
+        strcpy(c1,s2);
+        strcpy(c2,s3);
+        strcpy(c3,s1);
+        l=l2;
+        dl=l1;
+    }
+    k=l-1;
+    for(i=0;i<l-1;i++)
+    {
+        printf("%c",c1[i]);
+        for(j=1;j<dl-1;j++)
+        {
+            printf("*");
+        }
+        printf("%c\n",c2[k]);
+        k--;
+    }
+    printf("%s",c3);
+}
+Input: 
+abcd donaldo oxen
+
+Output:
+a*****n
+b*****e
+c*****x
+donaldo

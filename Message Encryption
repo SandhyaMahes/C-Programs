@@ -1,0 +1,61 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    char s[201];
+    int col,temp;
+    scanf("%s",s);
+    scanf("%d",&col);
+    int l=strlen(s),i,j,k=0,m=-1;
+    char a[l/col][col];
+    for(i=0;i<(l/col);i++)
+    {
+        for(j=0;j<col;j++)
+        {
+            if(k<l)
+            a[i][j]=s[k];
+            k++;
+        }
+    }
+    char st[l/2][col];
+    int d;
+    k=0;
+    for(j=0;j<col;j++)
+    {
+        for(i=0;i<l/col;i++)
+        {
+            if(i%2!=0)
+            {
+                k=0;
+                m++;
+                for(d=col-1;d>=0;d--)
+                {
+                    st[m][k]=a[i][d];
+                    k++;
+                }
+                printf("%c",st[m][j]);
+            }
+            else
+            printf("%c",a[i][j]);
+            if(k==-1)
+            {
+                m++;
+                k=col-1;
+            }
+        }
+    }
+}
+
+Input:
+midinadiazne 
+3 
+
+Output:
+madeinindiaz
+
+Explanation:
+m i d 
+a n i
+d i a
+e n z

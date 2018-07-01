@@ -1,0 +1,64 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    char s1[101],s2[101],temp[101];
+    int s,l1,l2,i,j=0,k,flag=0,count=0,sm;
+    scanf("%s\n%s",s1,s2);
+    scanf("%d",&s);
+    l1=strlen(s1);
+    l2=strlen(s2);
+    if(l1<l2)
+    {
+        strcpy(temp,s1);
+        strcpy(s1,s2);
+        strcpy(s2,temp);
+        sm=l1;
+        l1=l2;
+        l2=sm;
+    }
+    for(i=0;i<l1;i++)
+    {
+        k=i;
+        flag=0;
+        for(j=0;j<l2;j++)
+        {
+            if(s1[k]==s2[j] && k<l1)
+            {
+                flag++;
+                k++;
+                if(flag>=s)
+                { 
+                    count++;
+                }    
+                continue;
+            }
+            else
+            {
+                flag=0;
+                k=i;
+            }
+            
+        }
+    }
+    printf("%d",count);
+}
+
+Input: 
+management 
+engage
+2
+
+Output: 
+4
+
+Explanation: The common substrings of size at least 2 are ag, ge, age and en.
+
+Input:
+mom
+momom
+2
+
+output:
+6

@@ -1,0 +1,35 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    float n;
+    float sq=0.000,i,m=0.0001;
+    scanf("%f",&n);
+    if(n==0 || n==1)
+    {
+        printf("%.3f",n);
+    }
+    else
+    {
+        for(i=1.001;i<n/2;i=i+m)
+        {
+            if((i*i)>n)
+            {
+                sq=i-m;
+                break;
+            }
+        }
+        printf("%.3f",sq);
+    }
+}
+
+INPUT:
+1
+OUTPUT:
+1.000
+
+INPUT:
+56
+OUTPUT:
+7.483

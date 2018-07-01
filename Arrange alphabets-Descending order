@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include <stdlib.h>
+#include<string.h>
+int main()
+{  char s[100],d[100],ch;
+   int i,j,k=0,l,flag=0;
+   fgets(s,100,stdin);
+   for(i=0;s[i]!='\0';i++)
+   {
+     for(j=0;j<i;j++)
+     {
+       if(s[i]==s[j])
+       { 
+         flag=1;
+       }
+     }
+     if(flag==0)
+     {
+       d[k++]=s[i];
+     }
+     flag=0;
+   }
+   l=strlen(d);
+   for(i=1;i<l;i++)
+   {
+     for(j=0;j<l-i;j++)
+     {
+       if(d[j]<d[j+1])
+       {   ch=d[j];
+           d[j]=d[j+1];
+           d[j+1]=ch;
+       }
+     }
+   }
+   printf("%s",d);
+}

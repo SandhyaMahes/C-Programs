@@ -1,0 +1,50 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    char s[201],temp1[201],temp2[201];
+    int n,i,j,k=0,l=0,d=0,m=0,count=0;
+    scanf("%s%n",s,&n);
+    for(i=0;i<n;i++)
+    {
+        temp1[0]='\0';
+        temp2[0]='\0';
+        for(j=i+1;j<n;j++)
+        {
+            if(s[i]==s[j])
+            {
+                d=0;
+                m=0;
+                for(k=i;k<=j;k++)
+                {
+                    temp1[d]=s[k];
+                    if(k+1<=j)
+                    d++;
+                    else
+                    temp1[d+1]='\0';
+                }
+                m=d;
+                temp2[m+1]='\0';
+                for(l=0;l<=m;l++)
+                {
+                    temp2[l]=temp1[d];
+                    if(l<=m)
+                    d--;
+                }
+                if(strcmp(temp1,temp2)==0)
+                count++;
+            }
+        }
+    }
+    printf("%d",count);
+}
+
+Input:
+abccbaab
+
+Output:
+5 
+
+Explanation: 
+The sub palindromes are cc, bccb, aa, baab, abccba

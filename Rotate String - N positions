@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    char s[100],temp;
+    int r,n,i,j,k;
+    scanf("%s",s);
+    scanf("%d",&r);
+    n=strlen(s);
+    for(k=0;k<r;k++)
+    {
+        temp=s[n-1];
+        for(i=n-1;i>=0;i--)
+        {
+            s[i]=s[i-1];
+        }
+        s[0]=temp;
+    }
+   printf("%s",s);
+
+
+}

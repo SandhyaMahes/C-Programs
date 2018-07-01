@@ -1,0 +1,52 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int r,c;
+    scanf("%d%d",&r,&c);
+    int a[r][c],i,j,k=0,flag=0,l;
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    for(i=0;i<r;i++)
+    {
+        for(j=0;j<c;j++)
+        {
+            l=a[i][j];
+            for(k=i+1;k<r;k++)
+            {
+                if(a[k][j]>=l)
+                {
+                    if(abs(a[k][j])%2!=0) // since matrix contains negative numbers
+                    {
+                        l=a[k][j];
+                        flag=1;
+                    }
+                }
+            }
+            if(flag==1 && a[i][j]<l)
+            printf("%d ",l);
+            else
+            printf("* ");
+        }
+        printf("\n");
+    }
+}
+
+Input:
+4 5 
+46 45 -4 98 -88
+ 77 -44 15 -56 43 
+43 -27 18 13 16
+ -73 -99 -78 56 15
+ 
+ Output:
+ 77 * 15 * 43
+ * -27 * 13 *
+ * * * * *
+ * * * * *

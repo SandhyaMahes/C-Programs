@@ -1,0 +1,9 @@
+#include<stdio.h>
+#include <stdlib.h>
+int main()
+{
+    int a,b;
+    //Swapping with control strings
+    scanf("%d %d",&a,&b);
+    printf("%2$d %d",a,b);
+}

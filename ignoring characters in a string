@@ -1,0 +1,7 @@
+#include<stdio.h>
+#include <stdlib.h>
+int main()
+{char u[20],d[20],e[20];
+scanf("%[^@]@%[^.].%s",u,d,e);
+printf("%s\n%s\n%s",u,d,e);
+}

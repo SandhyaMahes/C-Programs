@@ -1,0 +1,39 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+int r,c,row,col;
+scanf("%d %d",&r,&c);
+char matrix[r][c],input[2];
+int path[r][c];
+for(row=0;row<r;row++)
+{
+    for(col=0;col<c;col++)
+    {
+        scanf("%s",input);
+        matrix[row][col]=input[0];
+        path[row][col]=0;
+    }
+}
+if(matrix[r-1][c-1]=='*')
+{
+    path[r-1][c-1]=1;
+}
+for(row=r-1;row>=0;row--)
+{
+    for(col=c-1;col>=0;col--)
+    {
+        if(matrix[row][col]=='*')
+        {
+            if(row!=r-1 && path[row+1][col]==1)
+              path[row][col]=1;
+        }
+        if(col!=c-1 && path[row][col+1]==1)
+        {
+            path[row][col]=1;
+        }
+    }
+}
+printf(path[0][0]==1?"yes":"no");
+}

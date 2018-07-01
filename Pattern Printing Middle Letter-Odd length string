@@ -1,0 +1,43 @@
+#include<stdio.h>
+#include <stdlib.h>
+int main()
+{
+    char s[1001];
+    scanf("%s",s);
+    int l,m,i,j,k,row,f=0;
+    l=strlen(s);
+    m=l/2;
+    for(i=1;i<=l;i++)
+    {
+        row=1;
+        f=0;
+        for(j=i;j<l;j++)
+        {
+            printf("*");
+        }
+        for(k=m;row<=i;k++)
+        {
+            if(k<l)
+            printf("%c",s[k]);
+            else
+            {
+                printf("%c",s[f]);
+                f++;
+            }
+            row++;
+        }
+        printf("\n");
+    }
+}
+
+Input:
+PROGRAM
+
+Output:
+******G
+*****GR
+****GRA
+***GRAM
+**GRAMP
+*GRAMPR
+GRAMPRO

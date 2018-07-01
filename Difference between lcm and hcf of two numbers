@@ -1,0 +1,34 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int n1,n2,lcm,hcf,i;
+    scanf("%d%d",&n1,&n2);
+    int s=n1<n2?n1:n2;
+    for(i=1;i<=s;i++)
+    {
+        if(n1%i==0 && n2%i==0)
+        hcf=i;
+    }
+    int l=n1>n2?n1:n2;
+    for(i=l;;i++)
+    {
+        if(i%n1==0 && i%n2==0)
+        {
+            lcm=i;
+            break;
+        }
+    }
+    printf("%d",lcm-hcf);
+}
+
+Input:
+30 45
+
+Output:
+75
+
+Explanation:
+LCM is 90 and HCF is 15.
+Difference = 90-15 = 75

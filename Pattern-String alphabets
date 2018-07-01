@@ -1,0 +1,32 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    char s[100];
+    int l,i,j;
+    scanf("%s%n",s,&l);
+    printf("%s\n",s);
+    for(j=1;j<l;j++)
+    {
+        printf("%s",&s[j]);
+        for(i=0;i<j;i++)
+        {
+            printf("%c",s[i]);
+        }
+        printf("\n");
+    }
+    printf("%s",s);
+}
+
+Example Input/Output:
+
+EAGLE
+
+OUTPUT:
+EAGLE
+AGLEE
+GLEEA
+LEEAG
+EEAGL
+EAGLE

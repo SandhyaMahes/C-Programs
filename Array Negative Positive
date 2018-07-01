@@ -1,0 +1,48 @@
+int main()
+{
+    int N;
+    scanf("%d",&N);
+    int arr[N], index=0;
+    while(index < N)
+    {
+        scanf("%d",&arr[index]);
+        index++;
+    }
+
+    index=1;
+    while(index < N)
+    {
+        if(arr[index] < 0)
+        {
+            int seekIndex = index-1;
+            while(arr[seekIndex] >= 0 && seekIndex >= 0)
+            {
+                seekIndex--;
+            }
+            seekIndex++;
+
+
+            if(seekIndex >= 0)
+            {
+                int origNegVal = arr[index];
+                int shiftIndex = index;
+                while(shiftIndex > seekIndex)
+                {
+                    arr[shiftIndex] = arr[shiftIndex-1];
+                    shiftIndex--;
+                }
+                arr[seekIndex] = origNegVal;
+            }
+
+        }
+
+        index++;
+    }
+
+    index=0;
+    while(index < N)
+    {
+        printf("%d ",arr[index++]);
+    }
+
+}

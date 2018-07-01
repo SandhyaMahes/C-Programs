@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int n,m,min,hrs,i=0,limit=0;
+    int ah,am;
+    scanf("%d %d",&n,&m);
+    scanf("%d:%d",&hrs,&min);
+    while(i<n)
+    {
+        scanf("%d:%d ",&ah,&am);
+        if((ah<=hrs && am<=min) || (ah<hrs))
+        limit++;
+        i++;
+    }
+    if(limit>=m)
+    printf("No");
+    else
+    printf("Yes"); 
+}
+
+Input:
+9 7 
+14:10
+14:30 13:40 13:55 14:05 15:10 13:12 12:55 13:48 14:09
+
+Output:
+No

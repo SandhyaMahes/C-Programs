@@ -1,0 +1,41 @@
+#include<stdio.h>
+#include <stdlib.h>
+int count(int a[], int u)
+{
+    int i,c=0;
+    for(i=0;i<5;i++)
+    {
+        if(u==a[i])
+        c++;
+    }
+    return c;
+}
+
+int main()
+{
+    int a[5],i;
+    for(i=0;i<5;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(i=0;i<5;i++)
+    {  
+        if(count(a,a[i])%2!=0)
+        {
+            printf("%d",a[i]);
+            break;
+        }
+    }
+}
+
+INPUT:
+44 54 88 44 54
+
+OUTPUT:
+88
+
+INPUT:
+55 55 55 55 55
+
+OUTPUT:
+55

@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int a,b,i,j;
+    scanf("%d%d",&a,&b);
+    j=b-1;
+    for(i=a+1;i<=(a+b)/2;i++)
+    {
+        if(i!=j)
+        {
+            printf("%d %d ",i,j);
+            j--;
+        }
+        if(i==j && (b-a)%2==0)
+        {
+            printf("%d",i);
+        }
+    }
+}
+
+INPUT:
+10 20
+
+OUTPUT:
+11 19 12 18 13 17 14 16 15

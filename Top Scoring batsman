@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include <stdlib.h>
+#include<string.h>
+int main()
+{int n,i,r,h=0,l;
+char b[100],a[100],t[100];
+scanf("%d",&n);
+for(i=0;i<n;i++)
+{scanf("%[^,],%d",b,&r);
+  l=strlen(b);
+  if(r>=h)
+  {h=r;
+   strcpy(t,b);
+  }
+}
+printf("%s",t);
+}

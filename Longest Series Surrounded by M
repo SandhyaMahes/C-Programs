@@ -1,0 +1,37 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int n,m;
+    scanf("%d %d",&n,&m);
+    int a[n],i,j=0,index[n],count=0,first,last;
+    for(i=0;i<n;i++)
+    scanf("%d",&a[i]);
+    for(i=0;i<n;i++)
+    {
+        if(a[i]==m)
+        {
+            index[j]=i;
+            j++;
+        }
+    }
+    for(i=j-1;i>0;i--)
+    {
+        if(index[i]-index[i-1]>count)
+        {
+            count=index[i]-index[i-1];
+            first=index[i-1];
+            last=index[i];
+        }
+    }
+    for(i=first+1;i<last;i++)
+    printf("%d ",a[i]);
+}
+
+Input:
+10 23
+23 76 23 129 34 12 23 45 67 23 
+
+Output: 
+129 34 12

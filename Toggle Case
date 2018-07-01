@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    char s[10][101],c=' ';
+    int count=0,i,j;
+    while(c==' ')
+    {
+        scanf("%s%c",&s[count],&c);
+        count++;
+    }
+    for(i=0;i<count;i++)
+    {
+        for(j=0;s[i][j]!='\0';j++)
+        {
+            if(isupper(s[i][j]))
+            printf("%c",tolower(s[i][j]));
+            else
+            printf("%c",toupper(s[i][j]));
+        }
+        printf(" ");
+    }
+}
+
+Input: 
+GooD mORniNg12_3
+
+Output:
+gOOd MorNInG12_3

@@ -1,0 +1,51 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int x1,y1,x2,y2,v1,v2,temp;
+    char c1,c2,c3,c4;
+    scanf("%d%c%d%c=%d",&x1,&c1,&y1,&c2,&v1);
+    scanf("%d%c%d%c=%d",&x2,&c3,&y2,&c4,&v2);
+    v1=-v1;
+    v2=-v2;
+    if(tolower(c1)!='x')
+    {
+        temp=x1;
+        x1=y1;
+        y1=temp;
+    }
+    if(tolower(c3)!='x')
+    {
+        temp=x2;
+        x2=y2;
+        y2=temp;
+    }
+    int x,y;
+    x=(y1*v2-y2*v1)/(x1*y2-x2*y1);
+    y=(v1*x2-v2*x1)/(x1*y2-x2*y1);
+    printf("%d %d",x,y);
+}
+
+LOGIC:
+Equations of the form 
+(x1)X + (y1)Y = v1
+(x2)X + (y2)Y = v2
+
+Perform Cross Multiplication
+
+   X    Y    1
+-----------------
+y1   v1   x1   y1
+   \/   \/   \/
+   /\   /\   /\
+y2   v2   x2   y2
+
+INPUT:
+ 5x + 2y = 14
+-4y + 3x = -2
+
+OUTPUT:
+2 2
+
+

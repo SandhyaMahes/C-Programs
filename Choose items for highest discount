@@ -1,0 +1,34 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int n,i=0,p,d,low=999999;
+    scanf("%d",&n);
+    char s[101],item[101];
+    while(i<n)
+    {
+        scanf("%s %d %d",s,&p,&d);
+        p=p*d/100;
+        if(low>p)
+        {
+            low=p;
+            strcpy(item,s);
+        }
+        i++;
+    }
+    printf("%s",item);
+}
+
+Input:
+3 
+harddisk 4000 20 
+monitor 15000 10 
+laptop 30000 5
+
+Output:
+harddisk
+
+Explanation: 
+harddisk savings = 800, monitor savings = 1500, laptop savings = 1500.
+Hence harddisk is offering least savings and is to be left out.

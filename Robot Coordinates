@@ -1,0 +1,41 @@
+#include<stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    char c=' ';
+    int x,y;
+    scanf("x%d y%d ",&x,&y);
+    char s[50];
+    int a[50],i,count=0;
+    while(c==' ')
+    {
+        scanf("%c%d%c",&s[count],&a[count],&c);
+        count++;
+    }
+    for(i=0;i<count;i++)
+    {
+        switch(s[i])
+        {
+            case 'N':
+            y+=a[i];
+            break;
+            case 'S':
+            y-=a[i];
+            break;
+            case 'E':
+            x+=a[i];
+            break;
+            case 'W':
+            x-=a[i];
+            break;
+        }
+    }
+    printf("x%d y%d",x,y);
+}
+
+Input:
+x2 y1 N3 E2 S1
+
+Output:
+x4 y3
